@@ -6,7 +6,7 @@ When the commodity stack up, the inventory may become messy and difficult to mon
 With the aid of our system, staff would be able the examine the current status of the commodity and do some follow up actions. 
 
 ## Key Features
-1. Search commodity using different filters
+1. Search commodity using different filters and find information through sorting by column heading 
 2. Insert commodity information (name, manufacturer, amount, price, availability of shop(s), locations) after each
 procurement
 3. Delete obsolete commodity
