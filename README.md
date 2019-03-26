@@ -2,7 +2,7 @@
 ## Why do we need a inventory system?
 When the commodity stack up, the inventory may become messy and difficult to monitor the inventory status. Therefore, the smart inventory system provides a systematic approach to help increase the efficiency. 
 
-## How does the system help the manage the inventory?
+## How does the system help managing the inventory?
 With the aid of our system, staff would be able the examine the current status of the commodity and do some follow up actions. 
 
 ## Key Features
@@ -13,6 +13,6 @@ procurement
 4. Update commodity information
 5. Automatic change of inventory status according to the amount of commodity that is currently available
 6. Deliver alerts when the commodity is “out-of-stock”
-7. Automatically sort commodity and put them in certain locations by its information (name, manufacturer, amount, price, availability of shop(s), locations)
+7. Automatically sort commodity in the system database, and allocate or rearrange them in certain locations by its information (name, manufacturer, amount, price, availability of shop(s), locations)
 
 ##
