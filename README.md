@@ -1,9 +1,9 @@
 # Smart Inventory System
 ## Why do we need a inventory system?
-When the commodity stack up, the inventory may become messy and difficult to monitor the inventory status. Therefore, the smart inventory system provides a systematic approach to help increase the efficiency. 
+When the commodity stack up, the inventory may become messy and difficult to monitor the inventory status. Therefore, the smart inventory system provides an systematic approach to help increase the efficiency. 
 
 ## How does the system help managing the inventory?
-With the aid of our system, staff would be able the examine the current status of the commodity and do some follow up actions. 
+With the aid of our system, staff would be able to examine the current status of the commodity and do some follow up actions. 
 
 ## Key Features
 1. Search commodity using different filters and find information through sorting by column heading 
