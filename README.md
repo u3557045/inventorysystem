@@ -13,6 +13,6 @@ procurement
 4. Update commodity information
 5. Automatic change of inventory status according to the amount of commodity that is currently available
 6. Deliver alerts when the commodity is “out-of-stock”
-7. Sort commodity by its information (name, manufacturer, amount, price, availability of shop(s), locations)
+7. Automatically sort commodity and put them in certain locations by its information (name, manufacturer, amount, price, availability of shop(s), locations)
 
 ##
