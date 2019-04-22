@@ -6,30 +6,40 @@
 #include <stdlib.h>
 #include "datastructure.h"
 using namespace std;
-
+void printmenu(){
+  string line;
+  ifstream menu;
+  menu.open("menu.txt");
+  if(menu.fail()){
+    cout << "Unable the open menu file" << endl;
+    exit(1);
+  }
+  while(getline(menu,line)){
+    cout << line << endl;
+  }
+}
 int main() {
   int command;
-
   while (true) {
-    cout<<"************************************************************\n";
-    cout<<"Enter 1 to Insert New Commodity Information\n";
-    cout<<"Enter 2 to Edit and Update Commodity Information\n";
-    cout<<"Enter 3 to View and Search Items\n";
-    cout<<"Enter 4 to Delete obsolete commodity\n";
-    cout<<"Enter 5 to Enter the POS System\n";
-    cout<<"Enter 6 to View Monthly Inventory Change Record\n";
-    cout<<"************************************************************\n";
-    cin>>command;
+    printmenu();
+    cout << "Please enter command: ";
+    cin >> command;
+    switch (command) {
+      case 1:            //buy new item or procurement
+        //procurement();
+        break;
+      case 2:            //update commodity info eg price name
+        //update();
+        break;
+      case 3:           // delete obsolete commodity
+        //code here
+        break;
+      case 4:           //product sold
+        //pos();
+        break;
+    }
+    system("clear");
 
-    if (command==1){
-      insertinfo();
-    }
-    else if (command==2) {
-      editinfo();
-    }
-    else if (command==3){
-
-    }
 
   }
 

@@ -24,12 +24,22 @@ procurement
 
 ## Implementation
 
-### Data structure
+### Transection 
 ````
-<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Price> <Amount> <Shop ID> <Date of purchase> <Status>
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Date> 
+````
+#### Procurement Example (i.e. postive amount)
+````
+00001 Milk C0001 Dairy Waikei 100 10000 01012019
+````
+### Selling Example (i.e. negative amount)
+````
+00001 Milk C0001 Dairy Waikei 120 -8 01012019
+````
+### Status
+````
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Status>
 ````
 
-#### Example
-````
-00001 Milk C0001 Dairy Waikei 20 100 KLN001 01012019 IN-STOCK
-````
+ 
+
