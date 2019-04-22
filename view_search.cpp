@@ -19,11 +19,12 @@ void view_search(){
     cout<<"Unable to open commodity status file\n";
     exit(1);
   }
-  int linenum=0,count=0;
+  int linenum=0,count=0,position;
   while (getline(fin,line))
     linenum+=1;
   itemstruct * dynamicarray=new itemstruct[linenum];
   while (getline(fin,line)){
+    position=line.find("|")
     dynamicarray[count].
   }
 
