@@ -38,7 +38,7 @@ procurement
 ````
 ### Status
 ````
-<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Status>
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Unit Price> <Amount> <Status>
 ````
 
  
