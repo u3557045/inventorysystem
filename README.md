@@ -1,4 +1,7 @@
 # Smart Inventory System
+
+## Problem Setting
+ 
 ### What is the problem?
 When the commodity stack up, the inventory may become messy and difficult to monitor the inventory status. It is difficult to find the location of specific item and determine when stock replenishment is needed.
 
@@ -19,4 +22,16 @@ procurement
 7. Give reports of monthly/yearly inventory change
 8. Customers order recording function, and automatically delete bought items in the inventory. The amount that needed to pay by the customers would be calculated
 
-### Data Structure
+## Implementation
+
+### Data structure
+```` 
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Amount> <Shop ID> <Date of purchase>
+````
+
+#### Example
+````
+00001 Milk C0001 Dairy 100 KLN001 01012019
+````
+
+
