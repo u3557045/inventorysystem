@@ -26,11 +26,15 @@ procurement
 
 ### Transection 
 ````
-<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Cost/Unit> <Selling Price/Unit> <Amount> <Date of purchase> 
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Date of purchase> 
 ````
-#### Example
+#### Procurement Example (i.e. postive amount)
 ````
-00001 Milk C0001 Dairy Waikei 20 100 KLN001 01012019
+00001 Milk C0001 Dairy Waikei 100 10000 01012019
+````
+### Selling Example (i.e. negative amount)
+````
+00001 Milk C0001 Dairy Waikei 120 -8 01012019
 ````
 ### Status
 ````
