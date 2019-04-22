@@ -26,24 +26,24 @@ procurement
 
 ### Transection 
 ````
-<Product ID>|<Product Name>|<Catagory ID>|<Catagory Name>|<Manufacturer>|<Unit Price>|<Amount>|<Date> 
+<Product ID>|<Product Name>|<Catagory Name>|<Manufacturer>|<Unit Price>|<Amount>|<Date> 
 ````
 ##### Procurement Example (i.e. postive amount)
 ````
-00001|Milk|C0001|Dairy|Waikei|100|10000|01012019
+00001|Milk|Dairy|Waikei|100|10000|01012019
 ````
 #### Selling Example (i.e. negative amount)
 ````
-00001|Milk|C0001|Dairy|Waikei|120|-8|01012019
+00001|Milk|Dairy|Waikei|120|-8|01012019
 ````
 ### Status
 ````
-<Product ID>|<Product Name>|<Catagory ID>|<Catagory Name>|<Manufacturer>|<Selling Price>|<Amount>|<Status>
+<Product ID>|<Product Name>|<Catagory Name>|<Manufacturer>|<Selling Price>|<Amount>|<Status>
 ````
 #### Example
 ````
-00001|Milk|C0001|Dairy|Waikei|120|10000|IN-STOCK
-00002|Milk tea|C0001|Dairy|Waikei|140|0|OUT-OF-STOCK
+00001|Milk|Dairy|Waikei|120|10000|IN-STOCK
+00002|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
 ````
  
 
