@@ -24,12 +24,18 @@ procurement
 
 ## Implementation
 
-### Data structure
+### Transection 
 ````
-<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Price> <Amount> <Shop ID> <Date of purchase> <Status>
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Date of purchase> 
 ````
-
 #### Example
 ````
-00001 Milk C0001 Dairy Waikei 20 100 KLN001 01012019 IN-STOCK
+00001 Milk C0001 Dairy Waikei 20 100 KLN001 01012019
 ````
+### Status
+````
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Status>
+````
+
+ 
+
