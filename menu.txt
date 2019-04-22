@@ -1,0 +1,15 @@
+----------------------------------------
+----------------------------------------
+ 1.Procurement
+
+ 2.Update Commodity Info
+	                                     
+ 2.View and Search Items
+
+ 3.Delete obsolete commodity
+
+ 4.Product Sold Out
+
+ 5.View Monthly Inventory Change Record
+----------------------------------------
+----------------------------------------
