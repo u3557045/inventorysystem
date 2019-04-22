@@ -1,3 +1,9 @@
+#include <string>
+using namespace std;
+struct catagorystruct{
+  string id;
+  string name;
+};
 struct itemstruct{
   idstruct productid;
   catagorystruct catagoryid;
@@ -8,8 +14,4 @@ struct itemstruct{
 struct idstruct{
   string id;
   string name;
-};
-struct catagorystruct{
-  string id;
-  sting name;
 };
