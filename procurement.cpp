@@ -56,6 +56,12 @@ void procurement(){
     cout<<"Enter Category ID: ";
     cin>>categoryid;
     cout<<endl;
+    while(categoryid[0]!='c'){
+      cout<<"Invalid input,Please input again!\n";
+      cout<<"Enter Category ID: ";
+      cin>>categoryid;
+      cout<<endl;
+    }
     cout<<"Enter Category Name: ";
     cin>>categoryname;
     cout<<endl;
