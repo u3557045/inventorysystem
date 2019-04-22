@@ -26,7 +26,7 @@ procurement
 
 ### Transection 
 ````
-<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Date of purchase> 
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Unit Price> <Amount> <Date> 
 ````
 #### Procurement Example (i.e. postive amount)
 ````
