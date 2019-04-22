@@ -3,7 +3,6 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
-#include <stdlib.h>
 #include <ctime>
 #include "updatestatus.h"
 using namespace std;
@@ -41,7 +40,7 @@ void procurement(){
 
   string itemexist;
   string productid,productname,categoryid,categoryname,price,manufacturer;
-  int amount;
+  int amount,sellingprice;
 
   for (int i=0;i<number_insert;++i){
     cout<<"Has the item been procured before?";
@@ -69,10 +68,13 @@ void procurement(){
     cout<<"Enter Manufacturer: ";
     cin>>manufacturer;
     cout<<endl;
+    cout<<"Enter Selling Price: ";
+    cin>>sellingprice;
+    cout<<endl;
 
     if (itemexist=="No"){
       //append into files
-      sfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|IN-STOCK\n";
+      sfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<sellingprice<<"|"<<amount<<"|IN-STOCK\n";
       time(&tt);
       ti=localtime(&tt);
       tfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
@@ -82,7 +84,7 @@ void procurement(){
       ti=localtime(&tt);
       tfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
       //change item status in status.txt
-      updatestatus(productid,amount);
+      updatestatus(statusfilename,productid,amount);
     }
   }
   delete ti;
