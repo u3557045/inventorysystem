@@ -26,10 +26,10 @@ procurement
 
 ### Data structure
 ````
-<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Amount> <Shop ID> <Date of purchase> <status>
+<Product ID> <Product Name> <Catagory ID> <Catagory Name> <Manufacturer> <Price> <Amount> <Shop ID> <Date of purchase> <Status>
 ````
 
 #### Example
 ````
-00001 Milk C0001 Dairy 100 KLN001 01012019 IN-STOCK
+00001 Milk C0001 Dairy Waikei 20 100 KLN001 01012019 IN-STOCK
 ````
