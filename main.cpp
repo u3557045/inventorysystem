@@ -25,16 +25,22 @@ int main() {
     cin >> command;
     switch (command) {
       case 1:            //buy new item or procurement
-        //procurement();
+        procurement();
         break;
       case 2:            //update commodity info eg price name
         //update();
         break;
-      case 3:           // delete obsolete commodity
-        //code here
+      case 3:           // view and search items
+        view_search();
         break;
-      case 4:           //product sold
+      case 4:           //delete items
         //pos();
+        break;
+      case 5;          //POS system, product sold out
+        //
+        break;
+      case 6;          //view monthly record
+        //
         break;
     }
     system("clear");
