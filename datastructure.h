@@ -1,17 +1,16 @@
 #include <string>
 using namespace std;
-struct catagorystruct{
-  string id;
-  string name;
-};
 struct idstruct{
   string id;
   string name;
 };
 struct itemstruct{
   idstruct productid;
-  catagorystruct catagoryid;
+  string category;
+  string manufacturer;
+  int price;
   int amount;
   string shopid;
-  string purchasedate;
+  string procurementdate;
+  string status;
 };
