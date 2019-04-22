@@ -21,7 +21,7 @@ int main() {
   int command;
   while (true) {
     printmenu();
-    cout << "Please enter command: ";
+    cout << "Please enter command (1-6): ";
     cin >> command;
     switch (command) {
       case 1:            //buy new item or procurement
