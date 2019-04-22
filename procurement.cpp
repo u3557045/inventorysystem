@@ -39,7 +39,7 @@ void procurement(){
   cout<<'\n';
 
   string itemexist;
-  string productid,productname,categoryid,categoryname,price,manufacturer;
+  string productid,productname,categoryname,price,manufacturer;
   int amount,sellingprice;
 
   for (int i=0;i<number_insert;++i){
@@ -53,15 +53,6 @@ void procurement(){
     cout<<"Enter Product Name: ";
     cin>>productname;
     cout<<endl;
-    cout<<"Enter Category ID: ";
-    cin>>categoryid;
-    cout<<endl;
-    while(categoryid[0]!='c'){
-      cout<<"Invalid input,Please input again!\n";
-      cout<<"Enter Category ID: ";
-      cin>>categoryid;
-      cout<<endl;
-    }
     cout<<"Enter Category Name: ";
     cin>>categoryname;
     cout<<endl;
@@ -80,17 +71,17 @@ void procurement(){
 
     if (itemexist=="No"){
       //append into files
-      sfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<sellingprice<<"|"<<amount<<"|IN-STOCK\n";
+      sfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<sellingprice<<"|"<<amount<<"|IN-STOCK\n";
       time(&tt);
       ti=localtime(&tt);
-      tfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
+      tfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
     }
     if (itemexist=="Yes"){
       time(&tt);
       ti=localtime(&tt);
-      tfout<<productid<<"|"<<productname<<"|"<<categoryid<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
+      tfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
       //change item status in status.txt
-      updatestatus(statusfilename,productid,amount);
+      updatestatus(statusfilename,6,amount,productid);
     }
   }
   delete ti;
