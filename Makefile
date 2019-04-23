@@ -8,3 +8,5 @@ main.o:main.cpp updateinfo.cpp updatestatus.cpp procurement.cpp
 	g++ -c $<
 build:main.o updateinfo.o updatestatus.o procurement.o
 	g++ $^ -o $@
+clean:
+	rm main.o updateinfo.o updatestatus.o procurement.o build

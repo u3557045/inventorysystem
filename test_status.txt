@@ -1,6 +1,6 @@
-00001|Milk|JM2|Waikei|120|0|OUT-OF-STOCK
+00001|asdbj|JM2|Waikei||0|OUT-OF_STOCK
 00002|Milk tea|JM2|Waikei|140|0|OUT-OF-STOCK
-00003|Milk tea|JM2|Waikei|140|0|OUT-OF_STOCK
+00003|Milk tea|JM2|Waikei|140|0|OUT-OF-STOCK
 00004|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
 00005|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
 00006|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK

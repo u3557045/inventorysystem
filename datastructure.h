@@ -15,4 +15,5 @@ struct itemstruct{
 void update();
 void procurement();
 void updatestatus(string filename,int field,string content,string id);
+void alert();
 #endif
