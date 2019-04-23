@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "datastructure.h"
+#include "sorting.h"
 using namespace std;
 
 void view_search(){
@@ -19,13 +20,16 @@ void view_search(){
     cout<<"Unable to open commodity status file\n";
     exit(1);
   }
-  int linenum=0,count=0,position;
+  int linenum=0,count=0,position,n=0,linecount=1;
   while (getline(fin,line))
     linenum+=1;
   itemstruct * dynamicarray=new itemstruct[linenum];
   while (getline(fin,line)){
-    position=line.find("|")
-    dynamicarray[count].
+    position=line.find("|",n)
+    if linecount==
+    dynamicarray[count].id=line.substr(0,position)
+    n=
+    count++;
   }
 
 

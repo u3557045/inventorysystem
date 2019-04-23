@@ -1,11 +1,9 @@
 #include <string>
 using namespace std;
-struct idstruct{
+
+struct itemstruct{
   string id;
   string name;
-};
-struct itemstruct{
-  idstruct productid;
   string category;
   string manufacturer;
   int price;
