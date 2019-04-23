@@ -1,6 +1,9 @@
-#include <string>
-using namespace std;
+#ifndef ITEM
+#define ITEM
 
+#include <string>
+
+using namespace std;
 struct itemstruct{
   string id;
   string name;
@@ -11,3 +14,9 @@ struct itemstruct{
   string procurementdate;
   string status;
 };
+void updatestatus(string filename,int field,string content,string id);
+void update();
+void procurement();
+
+
+#endif

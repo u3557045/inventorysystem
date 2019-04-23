@@ -11,5 +11,7 @@
  5.Product Sold Out
 
  6.View Monthly Inventory Change Record
+
+ 7.Setting
 ----------------------------------------
 ----------------------------------------

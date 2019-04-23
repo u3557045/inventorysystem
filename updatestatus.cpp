@@ -1,8 +1,7 @@
-#include <cstdlib>
-#include <fstream>
-#include <iomanip>
+#include "datastructure.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 void updatestatus(string filename,int field,string content,string id){
