@@ -1,9 +1,6 @@
-#include <cstdlib>
-#include <fstream>
-#include <iomanip>
 #include <iostream>
-#include <string>
 #include "datastructure.h"
+#include <fstream>
 using namespace std;
 void printmenu(){
   string line;
@@ -18,33 +15,43 @@ void printmenu(){
   }
 }
 int main() {
-  int command;
+  int command,threshold;
   while (true) {
     printmenu();
+
+
+    // place alert system here which pop notification when the volume reaches the threshol
+
+
     cout << "Please enter command (1-6): ";
     cin >> command;
     switch (command) {
       case 1:            //buy new item or procurement
+        system("clear");
         procurement();
         break;
       case 2:            //update commodity info eg price name
-        //update();
+        system("clear");
+        update();
         break;
       case 3:           // view and search items
-        view_search();
+        //view_search();
         break;
       case 4:           //delete items
+        //
+        break;
+      case 5:          //POS system, product sold out
         //pos();
         break;
-      case 5;          //POS system, product sold out
+      case 6:          //view monthly record
         //
         break;
-      case 6;          //view monthly record
-        //
+      case 7:          //setting
+        system("clear");
+        cout << "Please enter the threshold volume that triger the alert: ";
+        cin >> threshold;
         break;
     }
-    system("clear");
-
 
   }
 
