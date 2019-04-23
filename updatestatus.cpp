@@ -1,7 +1,7 @@
-#include "datastructure.h"
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "datastructure.h"
 using namespace std;
 
 void updatestatus(string filename,int field,string content,string id){
@@ -15,7 +15,7 @@ void updatestatus(string filename,int field,string content,string id){
   // if the file is the status file
   if(filename.find("status")!=string::npos){
     while(getline(file,line)){
-      cout << line << endl;
+      //cout << line << endl;
       count=1;
       amountstr.clear();
       if(line.find(id)!=string::npos){
@@ -63,7 +63,7 @@ void updatestatus(string filename,int field,string content,string id){
   // if the file is the transection file
   else if (filename.find("transection")!=string::npos){
     while(getline(file,line)){
-      cout << line << endl;
+      //cout << line << endl;
       count=1;
       if(line.find(id)!=string::npos){
         for(i=0;i<line.length();++i){

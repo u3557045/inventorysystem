@@ -1,6 +1,6 @@
 #include <iostream>
-#include "datastructure.h"
 #include <fstream>
+#include "datastructure.h"
 using namespace std;
 void printmenu(){
   string line;
@@ -17,6 +17,7 @@ void printmenu(){
 int main() {
   int command,threshold;
   while (true) {
+    system("clear");
     printmenu();
 
 

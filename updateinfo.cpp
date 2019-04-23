@@ -1,8 +1,8 @@
 #include <string>
 #include <iostream>
 #include "datastructure.h"
-#include "updatestatus.cpp"
 using namespace std;
+
 void update(){
   string id,shopid,status,transection;
   int choice;
