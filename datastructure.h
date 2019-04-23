@@ -8,7 +8,6 @@ struct itemstruct{
   string manufacturer;
   int price;
   int amount;
-  string shopid;
   string procurementdate;
   string status;
 };
