@@ -26,9 +26,12 @@ void view_search(){
   itemstruct * dynamicarray=new itemstruct[linenum];
   while (getline(fin,line)){
     position=line.find("|",n)
-    if linecount==
-    dynamicarray[count].id=line.substr(0,position)
-    n=
+    if (linecount==1){
+      dynamicarray[count].id=line.substr(0,position);
+      n=position+1;
+      position=line.find("|",n)
+
+
     count++;
   }
 
