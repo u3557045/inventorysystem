@@ -1,10 +1,13 @@
-#include <cstdlib>
-#include <fstream>
-#include <iomanip>
 #include <iostream>
+#include <cstdlib>
 #include <string>
+#include <vector>
+#include <fstream>
+#include <cmath>
+#include <ctime>
 using namespace std;
-
+const double e=2.72;
+const int MAX_SIZE = 1000;
 void updatestatus(string filename,int field,string content,string id){
   fstream file,temp;
   string line,copy,amountstr;
@@ -97,4 +100,12 @@ void updatestatus(string filename,int field,string content,string id){
   }
   file.close();
   temp.close();
+}
+int main()
+{
+    string id;
+    cout << "ID: ";
+    cin >> id;
+    updatestatus("test_status.txt",3,"JM2",id);
+    return 0;
 }
