@@ -1,0 +1,5 @@
+00001|asdbj|JM2|Waikei|1235-12|Wed Apr 24 15:37:25 2019
+00002|Milk tea|JM2|Waikei|140-23|Wed Apr 24 15:38:09 2019
+00001|asdbj|JM2|Waikei|1235-2|Wed Apr 24 15:39:15 2019
+00001|asdbj|JM2|Waikei|1235-2|Wed Apr 24 15:39:35 2019
+00001|asdbj|JM2|Waikei|1235-2|Wed Apr 24 15:40:52 2019

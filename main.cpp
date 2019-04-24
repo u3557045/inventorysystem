@@ -46,7 +46,7 @@ int main() {
         //
         break;
       case 5:          //POS system, product sold out
-        //pos();
+        pos();
         break;
       case 6:          //view monthly record
         //

@@ -16,4 +16,6 @@ void update();
 void procurement();
 void updatestatus(string filename,int field,string content,string id);
 void alert(string id,int threshold);
+void pos();
+
 #endif
