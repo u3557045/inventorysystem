@@ -15,13 +15,14 @@ void printmenu(){
   }
 }
 int main() {
-  int command,threshold,numberofshop=0;
-  string shopids,shopid;
+  int command,threshold=0,numberofshop=0;
+  string trackid="0";
   bool bye=false;
   while (!bye) {
     system("clear");
     printmenu();
-    alert();
+    alert(trackid,threshold);
+    cout << "----------------------------------------\n";
 
 
     // place alert system here which pop notification when the volume reaches the threshol
@@ -52,16 +53,14 @@ int main() {
         break;
       case 7:          //setting
         system("clear");
-        cout << "Please enter the shop ID that you want to track: "
-        while(cin >> shopid){
-          numberofshop++;
-          s
-        }
-        cout << "Please enter the threshold volume that triger the alert: ";
+        cout << "Please enter the shop ID that you want to track: ";
+        cin >> trackid;
+        cout << "Please enter the threshold (default 0) volume that triger the alert: ";
         cin >> threshold;
         break;
       case 8: // Exit
         bye=true;
+        cout << "Thanks for using, bye!\n";
         break;
     }
   }

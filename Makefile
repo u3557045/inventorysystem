@@ -6,7 +6,10 @@ procurement.o:procurement.cpp updatestatus.cpp  datastructure.h
 	g++ -c $<
 main.o:main.cpp updateinfo.cpp updatestatus.cpp procurement.cpp
 	g++ -c $<
-build:main.o updateinfo.o updatestatus.o procurement.o
+alert.o: alert.cpp datastructure.h
+	g++ -c $<
+
+build:main.o updateinfo.o updatestatus.o procurement.o alert.o
 	g++ $^ -o $@
 clean:
-	rm main.o updateinfo.o updatestatus.o procurement.o build
+	rm main.o updateinfo.o updatestatus.o procurement.o build alert.o
