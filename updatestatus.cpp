@@ -68,8 +68,8 @@ void updatestatus(string filename,int field,string content,string id){
     }
   }
 
-  // if the file is the transection file
-  else if (filename.find("transection")!=string::npos){
+  // if the file is the transaction file
+  else if (filename.find("transaction")!=string::npos){
     while(getline(file,line)){
       //cout << line << endl;
       count=1;
