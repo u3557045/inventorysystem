@@ -11,7 +11,10 @@ const int MAX_SIZE = 1000;
 
 int main()
 {
-    cin.get();
+    string d;
+    cin >> d;
+    cout << "Pause" << endl;
+    cout << cin.get() << endl;
     cout << "fk";
     return 0;
 }

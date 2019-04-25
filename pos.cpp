@@ -45,25 +45,20 @@ string checkamount(string filename, string productid){
   file.close();
   return amountstr;
 }
-void pos(){
+void pos(string shopid){
   int cmd,amount,count;
-  string productid,shopid,statusfilename,transectionfilename,price,line,pause,amountstr;
+  string productid,statusfilename,transectionfilename,price,line,pause,amountstr;
   itemstruct item;
   char checkout;
   time_t tt;
   struct tm*ti;
   bool exit=false,exist=false;
   fstream transection,status;
-
-  system("clear");
-  cout << "Please enter your shop ID: ";
-  cin >> shopid;
   statusfilename=shopid+"_status.txt";
   transectionfilename=shopid+"_transection.txt";
-  cout << statusfilename << transectionfilename << endl;
-
+  //cout << statusfilename << transectionfilename << endl;
   while(!exit){
-    //system("clear");
+    system("clear");
     exist=false;
     cout << "1.Check price\n";
     cout << "2.Sell product\n";
@@ -78,28 +73,30 @@ void pos(){
         cin >> productid;
         status.open(statusfilename.c_str(),ios::in);
         while(getline(status,line)&&!exist){
-          cout << line <<endl;
+          //cout << line <<endl;
           if(line.find(productid)!=string::npos)
             exist=true;
         }
-        //cout << exist << endl;
-        //cin >> pause;
         status.close();
         if(exist){
           price=checkprice(statusfilename,productid);
           cout << "The selling price of " << productid << " is $" << price << endl;
           cout << "Press any key to continue\n";
-          cin.ignore();
+          cin.get();
+          cin.get();
         }
         else{
-          cout << "Product ID " << productid << " is not exist.\nPress any key to continue.";
-          cin.ignore();
+          cout << "Product ID " << productid << " is not exist." <<endl;
+          cout << "Press any key to continue.\n";
+          cin.get();
+          cin.get();
         }
         break;
       case 2:
+        system("clear");
         cout << "Please enter product ID that needs check-out: ";
         cin >> productid;
-        cout << productid << endl;
+        //cout << productid << endl;
         status.open(statusfilename.c_str(),ios::in);
         while(getline(status,line)&&!exist){
           if(line.find(productid)!=string::npos)
@@ -109,9 +106,9 @@ void pos(){
         status.close();
         if(exist){
           amountstr=checkamount(statusfilename,productid);
-          cout << amountstr << endl;
+        //  cout << amountstr << endl;
           if(amountstr=="0")
-            cout << "Product ID " << productid << " is out of stock.";
+            cout << "Product ID " << productid << " is out of stock." << endl;
           else{
             price = checkprice(statusfilename,productid);
             cout << "The price is " << price << " and have "<< amountstr<< " left."<< endl;
@@ -130,7 +127,7 @@ void pos(){
                 //cout << asctime(ti);
                 while(getline(status,line)){
                   count=1;
-                  cout << line << endl;
+                  //cout << line << endl;
                   if(line.find(productid)!=string::npos){
                     for(int i=0;i<line.length();++i){
                       if(line[i]=='|')
@@ -154,17 +151,17 @@ void pos(){
           }
           transection.close();
           cout << "Press any key to continue.";
-          cin.ignore();
+          cin.get();
+          cin.get();
         }
         else{
           cout << "Product ID " << productid << " is not exist.\nPress any key to continue.";
-          cin.ignore();
+          cin.get();
+          cin.get();
         }
         break;
       case 3:
         exit=true;
-        cout << "Please press key to go back to main screen.";
-        cin.ignore();
         break;
     }
   }

@@ -12,10 +12,10 @@ struct itemstruct{
   string procurementdate;
   string status;
 };
-void update();
-void procurement();
+void update(string shopid);
+void procurement(string shopid);
 void updatestatus(string filename,int field,string content,string id);
 void alert(string id,int threshold);
-void pos();
-
+void pos(string shopid);
+void deleteitem(string shopid);
 #endif

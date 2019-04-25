@@ -37,7 +37,7 @@ void updatestatus(string filename,int field,string content,string id){
           else if(count==6 && line[i]!='|')
             amountstr+=line[i];
           if(count==7){
-            cout << "updatestatus : amountstr" << amountstr << endl;
+            //cout << "updatestatus : amountstr" << amountstr << endl;
             if(amountstr=="0")
               temp << "OUT-OF_STOCK";
             else

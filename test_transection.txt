@@ -1,4 +1,7 @@
-000001|asdbj|JM2|Waikei|1235|-3|Thu Apr 25 13:54:32 2019
+000001|asdbj|JM2|Waikei|SD|-3|Thu Apr 25 13:54:32 2019
 00002|Milk tea|JM2|Waikei|140|-3|Thu Apr 25 14:09:45 2019
 00002|Milk tea|JM2|Waikei|140|-4|Thu Apr 25 14:35:23 2019
 00002|Milk tea|JM2|Waikei|140|-24|Thu Apr 25 14:38:07 2019
+00004|Milk tea|Dairy|Waikei|140|-2|Thu Apr 25 17:10:47 2019
+00005|Milk tea|Dairy|Waikei|140|-1|Thu Apr 25 17:14:17 2019
+00006|Milk tea|Dairy|Waikei|140|-2|Thu Apr 25 17:15:36 2019

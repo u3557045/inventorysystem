@@ -7,16 +7,12 @@
 #include "datastructure.h"
 using namespace std;
 
-void procurement(){
+void procurement(string shopid){
   time_t tt;
   struct tm*ti;
   int number_insert;
-  string shopid;
   ofstream sfout;
   ofstream tfout;
-  cout<<"Enter your Shop ID: ";
-  cin>>shopid;
-  cout<<'\n';
   string statusfilename=shopid+"_status.txt";
   string tranfilename=shopid+"_transection.txt";
 
