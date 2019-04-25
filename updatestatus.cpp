@@ -31,11 +31,17 @@ void updatestatus(string filename,int field,string content,string id){
             temp << content << "|";
             next=false;
           }
+          if(field==6){
+            amountstr=content;
+          }
           else if(count==6 && line[i]!='|')
             amountstr+=line[i];
-          else if(count==7){
+          if(count==7){
+            cout << "updatestatus : amountstr" << amountstr << endl;
             if(amountstr=="0")
               temp << "OUT-OF_STOCK";
+            else
+              temp << "IN-STOCK";
             break;
           }
         }
@@ -52,6 +58,8 @@ void updatestatus(string filename,int field,string content,string id){
           else if(count==7){
             if(amountstr=="0")
               temp << "OUT-OF-STOCK";
+            else
+              temp << "IN-STOCK";
             break;
           }
         }
@@ -91,7 +99,7 @@ void updatestatus(string filename,int field,string content,string id){
   temp.open("temp_update.txt",ios::in);
   file.open(filename,ios::out);
   while(getline(temp,line)){
-    cout<< line <<endl;
+    //cout<< line <<endl;
     file << line <<endl;
   }
   file.close();

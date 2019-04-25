@@ -1,8 +1,8 @@
-00001|asdbj|JM2|Waikei|1235|30|OUT-OF_STOCK
-00002|Milk tea|JM2|Waikei|140|31|OUT-OF-STOCK
+00001|asdbj|JM2|Waikei|1235|0|OUT-OF-STOCK
+00002|Milk tea|JM2|Waikei|140|0|OUT-OF_STOCK
 00003|Milk tea|JM2|Waikei|140|0|OUT-OF-STOCK
-00004|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
-00005|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
-00006|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
-00007|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
-00008|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
+00004|Milk tea|Dairy|Waikei|140|4|IN-STOCK
+00005|Milk tea|Dairy|Waikei|140|2|IN-STOCK
+00006|Milk tea|Dairy|Waikei|140|5|IN-STOCK
+00007|Milk tea|Dairy|Waikei|140|2|IN-STOCK
+00008|Milk tea|Dairy|Waikei|140|6|IN-STOCK

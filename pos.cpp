@@ -25,9 +25,29 @@ string checkprice(string filename,string productid){
   file.close();
   return price;
 }
+string checkamount(string filename, string productid){
+  string amountstr,line;
+  int count;
+  ifstream file;
+  file.open(filename.c_str());
+  while(getline(file,line)){
+    count=1;
+    if(line.find(productid)!=string::npos){
+      for(int i=0;i<line.length();++i){
+        if(line[i]=='|')
+          count++;
+        if(count==6 && line[i]!='|')
+          amountstr+=line[i];
+      }
+      break;
+    }
+  }
+  file.close();
+  return amountstr;
+}
 void pos(){
   int cmd,amount,count;
-  string productid,shopid,statusfilename,transectionfilename,price,line,pause;
+  string productid,shopid,statusfilename,transectionfilename,price,line,pause,amountstr;
   itemstruct item;
   char checkout;
   time_t tt;
@@ -67,7 +87,7 @@ void pos(){
         status.close();
         if(exist){
           price=checkprice(statusfilename,productid);
-          cout << "The selling price of " << productid << " is " << price << endl;
+          cout << "The selling price of " << productid << " is $" << price << endl;
           cout << "Press any key to continue\n";
           cin.ignore();
         }
@@ -88,36 +108,49 @@ void pos(){
         //cout <<exist<< endl;
         status.close();
         if(exist){
-          price = checkprice(statusfilename,productid);
-          cout << "The price is " << price <<endl;
-          cout << "Please enter the amount: ";
-          cin >> amount;
-          cout << "Proceed? (Y/N)\n";
-          cin >> checkout;
-          cout << checkout <<endl;
-          if(checkout=='Y'){
-            transection.open(transectionfilename.c_str(),ios::app);
-            status.open(statusfilename.c_str(),ios::in);
-            time(&tt);
-            ti=localtime(&tt);
-            //cout << asctime(ti);
-            while(getline(status,line)){
-              count=1;
-              cout << line << endl;
-              if(line.find(productid)!=string::npos){
-                for(int i=0;i<line.length();++i){
-                  if(line[i]=='|')
-                    count++;
-                  if(count<=5)
-                    transection << line[i];
-                  else if(count==6){
-                    transection << -1*amount <<'|'<<asctime(ti);
+          amountstr=checkamount(statusfilename,productid);
+          cout << amountstr << endl;
+          if(amountstr=="0")
+            cout << "Product ID " << productid << " is out of stock.";
+          else{
+            price = checkprice(statusfilename,productid);
+            cout << "The price is " << price << " and have "<< amountstr<< " left."<< endl;
+            cout << "Please enter the amount: ";
+            cin >> amount;
+            if(stoi(amountstr)<amount)
+              cout << "Not enough stock!!" << endl;
+            else{
+              cout << "Proceed? (Y/N)\n";
+              cin >> checkout;
+              if(checkout=='Y'){
+                transection.open(transectionfilename.c_str(),ios::app);
+                status.open(statusfilename.c_str(),ios::in);
+                time(&tt);
+                ti=localtime(&tt);
+                //cout << asctime(ti);
+                while(getline(status,line)){
+                  count=1;
+                  cout << line << endl;
+                  if(line.find(productid)!=string::npos){
+                    for(int i=0;i<line.length();++i){
+                      if(line[i]=='|')
+                        count++;
+                      if(count<=5)
+                        transection << line[i];
+                      else if(count==6){
+                        transection << '|'<<-1*amount <<'|'<<asctime(ti);
+                        break;
+                      }
+                    }
                     break;
                   }
                 }
-                break;
+                status.close();
+                updatestatus(statusfilename,6,to_string(stoi(amountstr)-amount),productid);
               }
             }
+
+
           }
           transection.close();
           cout << "Press any key to continue.";

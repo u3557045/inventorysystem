@@ -15,7 +15,7 @@ void printmenu(){
   }
 }
 int main() {
-  int command,threshold=0,numberofshop=0;
+  int command,threshold=30,numberofshop=0;
   string trackid="0";
   bool bye=false;
   while (!bye) {
@@ -55,7 +55,7 @@ int main() {
         system("clear");
         cout << "Please enter the shop ID that you want to track: ";
         cin >> trackid;
-        cout << "Please enter the threshold (default 0) volume that triger the alert: ";
+        cout << "Please enter the threshold (default 30) volume that triger the alert: ";
         cin >> threshold;
         break;
       case 8: // Exit
