@@ -8,10 +8,11 @@
 
  4.Delete obsolete commodity
 
- 5.Product Sold Out
+ 5.POS System
 
  6.View Monthly Inventory Change Record
 
  7.Setting
-----------------------------------------
+
+ 8.Exit
 ----------------------------------------

@@ -7,17 +7,12 @@
 #include "datastructure.h"
 using namespace std;
 
-void procurement(){
+void procurement(string shopid){
   time_t tt;
   struct tm*ti;
-
   int number_insert;
-  string shopid;
   ofstream sfout;
   ofstream tfout;
-  cout<<"Enter your Shop ID";
-  cin>>shopid;
-  cout<<'\n';
   string statusfilename=shopid+"_status.txt";
   string tranfilename=shopid+"_transection.txt";
 
@@ -43,7 +38,7 @@ void procurement(){
   int amount,sellingprice;
 
   for (int i=0;i<number_insert;++i){
-    cout<<"Has the item been procured before?";
+    cout<<"Has the item been procured before? (Yes/No)";
     cin>>itemexist;
     cout<<'\n';
 
@@ -81,7 +76,7 @@ void procurement(){
       ti=localtime(&tt);
       tfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
       //change item status in status.txt
-      updatestatus(statusfilename,6,amount,productid);
+      updatestatus(statusfilename,6,to_string(amount),productid);
     }
   }
   delete ti;
