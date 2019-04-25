@@ -26,15 +26,15 @@ procurement
 
 ### Transaction 
 ````
-<Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Unit Price>|<Amount>|<Date> 
+<Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Price>|<Amount>|<Date> 
 ````
 ##### Procurement Example (i.e. postive amount)
 ````
-ID00001|Milk|Dairy|Waikei|100|10000|01012019
+ID00001|Milk|Dairy|Waikei|100|10000|Thu Apr 25 22:55:49 2019
 ````
 #### Selling Example (i.e. negative amount)
 ````
-ID00001|Milk|Dairy|Waikei|120|-8|01012019
+ID00001|Milk|Dairy|Waikei|120|-8|Thu Apr 26 22:55:49 2019
 ````
 ### Status
 ````
