@@ -46,27 +46,30 @@ string checkamount(string filename, string productid){
   return amountstr;
 }
 void pos(string shopid){
-  int cmd,amount,count;
-  string productid,statusfilename,transectionfilename,price,line,pause,amountstr;
+  int amount,count;
+  string productid,statusfilename,transactionfilename,price,line,pause,amountstr,cmd,shopids,id;
   itemstruct item;
   char checkout;
   time_t tt;
   struct tm*ti;
   bool exit=false,exist=false;
-  fstream transection,status;
+  fstream transaction,status,shop,shoplist;
   statusfilename=shopid+"_status.txt";
-  transectionfilename=shopid+"_transection.txt";
-  //cout << statusfilename << transectionfilename << endl;
+  transactionfilename=shopid+"_transaction.txt";
+  //cout << statusfilename << transactionfilename << endl;
   while(!exit){
     system("clear");
     exist=false;
     cout << "1.Check price\n";
     cout << "2.Sell product\n";
     cout << "3.Exit\n";
-    cout << "Please enter the command (1-3): ";
-    cin >> cmd;
+    do{
+      cout << "Please enter the command (1-3): ";
+      cin >> cmd;
+    }while(cmd>"3"||cmd<"1");
+
     exist=false;
-    switch (cmd) {
+    switch (stoi(cmd)) {
       case 1:
         system("clear");
         cout << "Please enter the product ID that you want to check: ";
@@ -107,8 +110,27 @@ void pos(string shopid){
         if(exist){
           amountstr=checkamount(statusfilename,productid);
         //  cout << amountstr << endl;
-          if(amountstr=="0")
-            cout << "Product ID " << productid << " is out of stock." << endl;
+          if(amountstr=="0"){
+            cout << "Product ID " << productid << " is out of stock in your shop." << endl;
+            shoplist.open("shoplist.txt",ios::in);
+            while(getline(shoplist,id)){
+              cout << "Opening shop " << id << endl;
+              shop.open((id+"_status.txt").c_str(),ios::in);
+              while(getline(shop,line)){
+                cout << line << endl;
+                if(line.find(productid)!=string::npos && line!=shopid){
+                  if(checkamount((id+"_status.txt").c_str(),productid)!="0"){
+                    shopids+=id+" ";
+                    break;
+                  }
+                }
+              }
+              shop.close();
+            }
+            shoplist.close();
+            if(!shopids.empty())
+              cout << "Available at shop " << shopids << endl;
+          }
           else{
             price = checkprice(statusfilename,productid);
             cout << "The price is " << price << " and have "<< amountstr<< " left."<< endl;
@@ -117,10 +139,11 @@ void pos(string shopid){
             if(stoi(amountstr)<amount)
               cout << "Not enough stock!!" << endl;
             else{
-              cout << "Proceed? (Y/N)\n";
+              cout << "The total is $" << stod(price)*(amount) <<endl;
+              cout << "Proceed? (Y/N) ";
               cin >> checkout;
               if(checkout=='Y'){
-                transection.open(transectionfilename.c_str(),ios::app);
+                transaction.open(transactionfilename.c_str(),ios::app);
                 status.open(statusfilename.c_str(),ios::in);
                 time(&tt);
                 ti=localtime(&tt);
@@ -133,9 +156,9 @@ void pos(string shopid){
                       if(line[i]=='|')
                         count++;
                       if(count<=5)
-                        transection << line[i];
+                        transaction << line[i];
                       else if(count==6){
-                        transection << '|'<<-1*amount <<'|'<<asctime(ti);
+                        transaction << '|'<<-1*amount <<'|'<<asctime(ti);
                         break;
                       }
                     }
@@ -146,10 +169,8 @@ void pos(string shopid){
                 updatestatus(statusfilename,6,to_string(stoi(amountstr)-amount),productid);
               }
             }
-
-
           }
-          transection.close();
+          transaction.close();
           cout << "Press any key to continue.";
           cin.get();
           cin.get();
@@ -165,6 +186,4 @@ void pos(string shopid){
         break;
     }
   }
-
-
 }

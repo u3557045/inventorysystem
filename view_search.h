@@ -4,9 +4,7 @@
 #include <iostream>
 #include <string>
 #include "datastructure.h"
-#include "sorting.h"
 using namespace std;
-
 void view_search(){
   string shopcode;
   cout<<"Input the Shop ID that would like to search: ";
@@ -84,7 +82,7 @@ void view_search(){
   fin.close();
 
   int command,sortcommand,ascenddescend;
-  cout<<"Please enter command(1/2)"<<endl;
+  cout<<"Please enter command(1-2)"<<endl;
   cout<<"1.View through sorting by different columns"<<endl;
   cout<<"2.Search by different filters"<<endl;
   cout<<"3.Exit"<<end;

@@ -3,17 +3,19 @@
 #include <fstream>
 #include <string>
 void deleteitem(string shopid) {
-  string productid,line,statusfilename;
-  int cmd;
+  string productid,line,statusfilename,cmd;
   bool exit = false,exist=false;
   fstream status,temp;
   while(!exit){
     system("clear");
     cout << "1.Delete obsolete commodity\n";
     cout << "2.Exit\n";
-    cout << "Please enter command (1-2): ";
-    cin >> cmd;
-    switch (cmd) {
+    do{
+      cout << "Please enter command (1-2): ";
+      cin >> cmd;
+    }while(cmd<"1"||cmd>"2");
+
+    switch (stoi(cmd)) {
       case 1:
         cout << "Please enter the ID of the product that you want to delete from the inventory: " << endl;
         cin >> productid;
