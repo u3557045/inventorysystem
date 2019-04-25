@@ -26,7 +26,7 @@ procurement
 
 ### Transaction 
 ````
-<Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Price>|<Amount>|<Date> 
+<Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Selling Price>|<Amount>|<Date> 
 ````
 ##### Procurement Example (i.e. postive amount)
 ````
