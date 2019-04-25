@@ -74,7 +74,7 @@ int main() {
         update(shopid);
         break;
       case 3:           // view and search items
-        //view_search();
+        view_search();
         break;
       case 4:           //delete items
         system("clear");

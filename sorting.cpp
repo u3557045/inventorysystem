@@ -6,7 +6,7 @@
 #include "datastructure.h"
 using namespace std;
 
-void sorting(int command,int linenum,int order){
+void sorting(int command,int linenum,int order,itemstruct *array){
   string element;
   if (command==1)
     element="id";
@@ -21,12 +21,24 @@ void sorting(int command,int linenum,int order){
   if (command==6)
     element="amount";
   if (command==7)
-    element=="status";
+    element="status";
 
   for (int i=0;i<linenum-1;++i){
-    for (int j=0;j<linenum;++j){
-      int temp;
-      if ()
+    for (int j=1;j<linenum;++j){
+      itemstruct temp;
+      if ((order==1)&&((array[i].element)>(array[j].element))){
+        temp=array[i];
+        array[i]=array[j];
+        array[j]=temp;
+      }
+      if ((order==2)&&((array[i].element)<(array[j].element))){
+        temp=array[i];
+        array[i]=array[j];
+        array[j]=temp;
+      }
+
     }
   }
+  for (int k=0;k<linenum;++k)
+    cout<<array[k].id<<" "<<array[k].name<<" "<<array[k].category<<" "<<array[k].manufacturer<<" "<<array[k].price<<" "<<array[k].amount<<" "<<array[k].status<<" "<<endl;
 }

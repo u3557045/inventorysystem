@@ -12,6 +12,28 @@ void view_search(){
   cout<<"Input the Shop ID that would like to search: ";
   cin>>shopcode;
   cout<<'\n';
+
+  //open shoplist file
+  ifstream fin;
+  finlist.open(shoplist.txt);
+  if (fin.fail()){
+    cout<<"Unable to open shop list file\n";
+    exit(1);
+  }
+  //check whether the shop id already exists
+  bool exist=false;
+  while (exist==false){
+    while (getline(finlist,shopline)){
+      if (shopline==shopcode)
+        exist=true;
+    }
+    if (exist==false){
+      cout<<"Shop id does not exist, please enter shop id again: "<<endl;
+      cin>>shopcode;}
+  }
+  finlist.close();
+
+
   string statusfilename=shopid+"_status.txt";
 
   ifstream fin;
@@ -72,11 +94,21 @@ void view_search(){
       cout<<"Please enter command(1-7)"<<endl;
       cout<<"Sort by 1.Product ID 2.Product Name 3.Category 4.Manufacturer 5.Selling Price 6.Amount 7.Status\n"
       cin>>sortcommand;
-      cout<<"Sort in 1.ascending or 2.descending order? ";
+      cout<<"Sort in 1.ascending or 2.descending order?(1/2) ";
       cin>>ascenddescend;
       cout<<endl;
-      sorting(sortcommand,count,ascenddescend);
-
+      sorting(sortcommand,count,ascenddescend,dynamicarray);
+    }
+    else if (command==2){
+      string filter;
+      cout<<"Search by only showing: "
+      cin>>filter;
+      for (int k=0;k<count;++k){
+        dynamicarray[k].price= string dynamicarray[k].price;
+        dynamicarray[k].amount=string dynamicarray[k].amount;
+        if (filter==dynamicarray[k].id||filter==dynamicarray[k].name||filter==dynamicarray[k].category||filter==dynamicarray[k].manufacturer||filter==dynamicarray[k].price||filter==dynamicarray[k].amount||filter==dynamicarray[k].status)
+          cout<<dynamicarray[k].id<<" "<<dynamicarray[k].name<<" "<<dynamicarray[k].category<<" "<<dynamicarray[k].manufacturer<<" "<<dynamicarray[k].price<<" "<<dynamicarray[k].amount<<" "<<dynamicarray[k].status<<" "<<endl;
+      }
     }
   }
   delete [] dynamicarray;
