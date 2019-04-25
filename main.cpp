@@ -40,7 +40,7 @@ bool checkshop(string shopid){
 }
 int main() {
   int command,threshold=30,numberofshop=0,cmd;
-  string trackid="0",shopid,temp;
+  string shopid,temp;
   bool add;
   bool bye=false,case7exit=false;
 
@@ -52,11 +52,10 @@ int main() {
         cin>>shopid;
         add=checkshop(shopid);
       }while(!add);
-
     }
     //system("clear");
     printmenu();
-    alert(trackid,threshold);
+    alert(shopid,threshold);
     cout << "----------------------------------------\n";
 
 
@@ -99,8 +98,6 @@ int main() {
           cin >> cmd;
           switch (cmd) {
             case 1:
-              cout << "Please enter the shop ID that you want to track: ";
-              cin >> trackid;
               cout << "Please enter the threshold (default 30) volume that triger the alert: ";
               cin >> threshold;
               break;
