@@ -1,1 +1,14 @@
-ID00001|ASD|ASD|SGGS|20000|-2|Thu Apr 25 22:55:49 2019
+ID00001|potato chips|food|Tai Long|10|1000|Thu Jan 25 22:55:49 2019
+ID00002|coke|Drinks|Coka Cola|200|50|Thu Feb 25 22:56:49 2019
+ID00004|Milk|Dairy|Waikei|20|10|Tue Feb 13 22:55:49 2019
+ID00002|coke|Drinks|Coka Cola|100|-50|Thu Apr 25 22:56:49 2019
+ID00002|coke|Drinks|Coka Cola|150|20|Thu Apr 25 22:56:49 2019
+ID00009|chair|furniture|KAKA|40000000|34217|Thu Apr 25 22:55:49 2019
+ID00001|potato chips|food|Tai Long|12|-1|Thu Apr 25 22:55:49 2019
+ID00009|chair|furniture|KAKA|1435453466565|-3421|Thu Apr 25 22:55:49 2019
+ID00001|potato chips|food|Tai Long|12|-1|Thu Apr 25 22:55:49 2019
+ID00001|potato chips|food|Tai Long|12|-1|Thu Apr 25 22:55:49 2019
+ID00001|potato chips|food|Tai Long|12|-1|Thu May 25 22:55:49 2019
+ID00009|chair|furniture|KAKA|552332112|-3|Sat May 27 22:55:49 2019
+ID00002|coke|Drinks|Coka Cola|170|-20|Thu Apr 25 22:56:49 2019
+ID00009|chair|furniture|KAKA|1000|3|Sat May 27 22:55:49 2019
