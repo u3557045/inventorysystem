@@ -36,9 +36,7 @@ make build
 We stored the inventory database into two different files, i.e. xxx_status.txt and xxx_transaction.txt, which handles the status of each unique item and records every transaction detail. Details are as follow.(<> represent a field)
 
 #### Transaction file 
-
 ##### Procurement (i.e. postive amount)
-
 ###### Structure
 ````
 <Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Unit Cost>|<Amount>|<Date> 
@@ -48,7 +46,6 @@ We stored the inventory database into two different files, i.e. xxx_status.txt a
 ID00001|Milk|Dairy|Waikei|100|10000|Thu Apr 25 22:55:49 2019
 ````
 ##### Selling (i.e. negative amount)
-
 ###### Structure
 ````
 <Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Unit Selling Price>|<Amount>|<Date> 
