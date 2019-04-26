@@ -111,6 +111,11 @@ void view_search(){
           cout<<dynamicarray[k].id<<" "<<dynamicarray[k].name<<" "<<dynamicarray[k].category<<" "<<dynamicarray[k].manufacturer<<" "<<dynamicarray[k].price<<" "<<dynamicarray[k].amount<<" "<<dynamicarray[k].status<<" "<<endl;
       }
     }
+    cout<<"Please enter command(1-2)"<<endl;
+    cout<<"1.View through sorting by different columns"<<endl;
+    cout<<"2.Search by different filters"<<endl;
+    cout<<"3.Exit"<<end;
+    cin>>command;
   }
   delete [] dynamicarray;
 }
