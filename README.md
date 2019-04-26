@@ -12,14 +12,14 @@ With the aid of our system, staff would be able to examine the current status of
 The program is an integation of inventory database and user cilent. Using the user cilent, staff can update the database and retrive the inventory status from the database.
 
 ### Key Features
-1. Search commodity using different filters and find information through sorting by column heading
+1. Search commodity in different shops using different filters and find information through sorting by column heading
 2. Insert commodity information (name, manufacturer, amount, price, availability of shop(s)) after each
 procurement
 3. Delete obsolete commodity
 4. Update commodity information
 5. Automatic change of inventory status according to the amount of commodity that is currently available
 6. Deliver alerts when the commodity is “OUT-OF-STOCK” and when the inventory for an item reaches the alert threshold
-7. Give reports of monthly/yearly inventory change
+7. Give monthly reports of sales and inventory change
 8. Customers order recording function, and automatically delete bought items in the inventory. The amount that needed to pay by the customers would be calculated
 
 ### How to use
