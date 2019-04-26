@@ -12,13 +12,11 @@ pos.o: pos.cpp datastructure.h
 	g++ -c $<
 deleteitem.o: deleteitem.cpp datastructure.h
 	g++ -c $<
-view_record.o: view_record.cpp datastructure.h
+view_record.o: view_record.cpp getinfo.cpp datastructure.h
 	g++ -c $<
-view_search.o: view_search.cpp sorting.cpp datastructure.h
+getinfo.o:getinfo.cpp datastructure.h
 	g++ -c $<
-sorting.o: sorting.cpp datastructure.h
-	g++ -c $<
-build:main.o updateinfo.o updatestatus.o procurement.o alert.o pos.o deleteitem.o view_record.o view_search.o sorting.o
+build:main.o updateinfo.o updatestatus.o procurement.o alert.o pos.o deleteitem.o view_record.o getinfo.o
 	g++ $^ -o $@
 clean:
-	rm main.o updateinfo.o updatestatus.o procurement.o build alert.o pos.o deleteitem.o view_record.o view_search.o sorting.o
+	rm main.o updateinfo.o updatestatus.o procurement.o build alert.o pos.o deleteitem.o view_record.o getinfo.o

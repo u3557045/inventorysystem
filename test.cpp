@@ -11,16 +11,9 @@ const int MAX_SIZE = 1000;
 
 int main()
 {
-    ifstream file;
-    string line;
-    file.open("test_status.txt");
-    while(getline(file,line)){
-      cout << line << endl;
-    }
-    while(getline(file,line)){
-      cout << line << endl;
-    }
-    file.close();
-    cout << "fk";
+    char i;
+    cin >> i ;
+    cout << i << endl;
+    
     return 0;
 }
