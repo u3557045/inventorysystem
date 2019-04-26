@@ -22,9 +22,21 @@ procurement
 7. Give reports of monthly/yearly inventory change
 8. Customers order recording function, and automatically delete bought items in the inventory. The amount that needed to pay by the customers would be calculated
 
+### How to use
+
+```
+make build
+./build
+```
+
 ## Implementation
 
-### Transaction 
+### Data structure
+
+We stored the inventory database into two different files, i.e. xxx_status.txt and xxx_transaction.txt, which handles the status of each unique item and records every transaction detail. Details are as follow.(<> represent a field)
+
+#### Transaction file structure
+
 ````
 <Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Unit Price>|<Amount>|<Date> 
 ````
@@ -32,18 +44,40 @@ procurement
 ````
 ID00001|Milk|Dairy|Waikei|100|10000|Thu Apr 25 22:55:49 2019
 ````
-#### Selling Example (i.e. negative amount)
+##### Selling Example (i.e. negative amount)
 ````
 ID00001|Milk|Dairy|Waikei|120|-8|Thu Apr 26 22:55:49 2019
 ````
-### Status
+#### Status file structure
 ````
 <Product ID>|<Product Name>|<Category Name>|<Manufacturer>|<Selling Price>|<Amount>|<Status>
 ````
-#### Example
+##### Example
 ````
 ID00001|Milk|Dairy|Waikei|120|10000|IN-STOCK
 ID00002|Milk tea|Dairy|Waikei|140|0|OUT-OF-STOCK
 ````
- 
+
+### Modules
+
+#### Procurement 
+This module allows the user to update the inventory when new item is bought and ready for sale. 
+It requires the user to input the detail of the commodity.
+The system will automatically store the detail into database and record the time of purchase.
+
+#### Update Commoidity Info
+This module allows the user to update the item detail which is already exist in the database in case of details erorrs or modification of price tag.
+
+#### View and Search Item
+This module allows the user to view the inventory status of different shop by appling different filters.
+
+#### Delete Obsolete Commodity
+This module allows the user to delete the commodity that is expired or not avavilble any more.
+
+#### POS System
+This module allows the staff to perform the checkout action. 
+The system prompts the user to input the product ID and amount, then the system will output the total.
+Once the staff confirms the transaction, it will be recorded.
+
+#### View Monthly Record
 
