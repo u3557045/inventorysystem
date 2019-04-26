@@ -43,6 +43,8 @@ void view_search(){
 
   //input information into the dynamic array of structs
   int linenum=0,count=0,position,n=0;
+  while (getline(fin,line))
+    linenum+=1
   itemstruct * dynamicarray=new itemstruct[linenum];
   while (getline(fin,line)){
     position=line.find("|",n)
