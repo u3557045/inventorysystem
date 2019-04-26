@@ -125,9 +125,9 @@ int main() {
             case 2:
               cout << "Enter your shop ID: ";
               cin >> temp;
-              if(checkshop(shopid)){
+              if(checkshop(temp)){
                 shopid=temp;
-                cout << "Sucessful change shop ID!\n";
+                cout << "Sucessfully changed shop ID!\n";
                 cout << "Press any key to go back. ";
                 cin.get();
                 cin.get();

@@ -105,7 +105,7 @@ void view_search(){
   cout<<endl;
   while(command!=3){
     if (command==1){
-      cout<<"Sort by 1.Product ID \n2.Product Name \n3.Category \n4.Manufacturer \n5.Selling Price \n6.Amount \n7.Status\n";
+      cout<<"Sort by \n1.Product ID \n2.Product Name \n3.Category \n4.Manufacturer \n5.Selling Price \n6.Amount \n7.Status\n";
       cout<<"Please enter command(1-7): ";
       cin>>sortcommand;
       cout<<endl;
@@ -113,9 +113,9 @@ void view_search(){
       cin>>ascenddescend;
       cout<<endl;
       sorting(sortcommand,count,ascenddescend,dynamicarray);
-      cout<<"Product ID\t"<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\t\n";
+      cout<<"Product ID\t"<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\n";
       for (int k=0;k<linenum;++k)
-        cout<<dynamicarray[k].id<<"\t\t"<<dynamicarray[k].name<<"\t\t"<<dynamicarray[k].category<<"\t\t"<<dynamicarray[k].manufacturer<<"\t\t"<<dynamicarray[k].price<<"\t\t"<<dynamicarray[k].amount<<'\t'<<dynamicarray[k].status<<'\t'<<endl;
+        cout<<dynamicarray[k].id<<"\t\t"<<dynamicarray[k].name<<"\t\t"<<dynamicarray[k].category<<"\t\t"<<dynamicarray[k].manufacturer<<"\t\t"<<dynamicarray[k].price<<"\t\t"<<dynamicarray[k].amount<<'\t'<<dynamicarray[k].status<<'\n'<<endl;
     }
     else if (command==2){
       string filter;
@@ -123,13 +123,21 @@ void view_search(){
       cout<<"Search: ";
       cin>>filter;
       string price,amount;
+      int countsearch=0;
       while (checkex==false){
-        cout<<"Product ID\t"<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\t\n";
         for (int k=0;k<count;++k){
           if (filter==dynamicarray[k].id||filter==dynamicarray[k].name||filter==dynamicarray[k].category||filter==dynamicarray[k].manufacturer||filter==dynamicarray[k].status){
-            cout<<dynamicarray[k].id<<"\t\t"<<dynamicarray[k].name<<"\t\t"<<dynamicarray[k].category<<"\t\t"<<dynamicarray[k].manufacturer<<"\t\t"<<dynamicarray[k].price<<"\t\t"<<dynamicarray[k].amount<<'\t'<<dynamicarray[k].status<<'\t'<<endl;
+            checkex=true;
+            countsearch++;
+            if (countsearch==1&&(checkex==true))
+              cout<<"Product ID\t"<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\n";
+            cout<<dynamicarray[k].id<<"\t\t"<<dynamicarray[k].name<<"\t\t"<<dynamicarray[k].category<<"\t\t"<<dynamicarray[k].manufacturer<<"\t\t"<<dynamicarray[k].price<<"\t\t"<<dynamicarray[k].amount<<'\t'<<dynamicarray[k].status<<'\n'<<endl;
           }
-          checkex=true;
+        }
+        if (checkex==false){
+          cout<<"Such item does not exist, please search again: ";
+          cin>>filter;
+          cout<<endl;
         }
       }
     }
