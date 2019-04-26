@@ -21,4 +21,5 @@ void deleteitem(string shopid);
 void view_record(string shopid);
 void sorting(int command,int linenum,int order);
 void view_search();
+void sorting(int command,int linenum,int order,itemstruct *array);
 #endif
