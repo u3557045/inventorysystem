@@ -90,7 +90,8 @@ int main() {
         system("clear");
         update(shopid);
         break;
-      case 3:           // view and search items
+      case 3:
+        system("clear");    // view and search items
         view_search();
         break;
       case 4:           //delete items
@@ -102,7 +103,7 @@ int main() {
         pos(shopid);
         break;
       case 6:          //view monthly record
-        view_record(shopid);
+        //view_record(shopid);
         break;
       case 7:          //setting
         case7exit=false;
@@ -124,9 +125,9 @@ int main() {
             case 2:
               cout << "Enter your shop ID: ";
               cin >> temp;
-              if(checkshop(shopid)){
+              if(checkshop(temp)){
                 shopid=temp;
-                cout << "Sucessful change shop ID!\n";
+                cout << "Sucessfully changed shop ID!\n";
                 cout << "Press any key to go back. ";
                 cin.get();
                 cin.get();
