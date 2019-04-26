@@ -12,7 +12,7 @@ void view_search(){
   cout<<'\n';
 
   //open shoplist file
-  ifstream fin;
+  ifstream finlist;
   finlist.open(shoplist.txt);
   if (fin.fail()){
     cout<<"Unable to open shop list file\n";
@@ -101,9 +101,10 @@ void view_search(){
       string filter;
       cout<<"Search by only showing: "
       cin>>filter;
+      string price,amount;
       for (int k=0;k<count;++k){
-        dynamicarray[k].price= string dynamicarray[k].price;
-        dynamicarray[k].amount=string dynamicarray[k].amount;
+        price= to_string(dynamicarray[k].price);      //convert price and amount to string in order to compare
+        amount=to_string(dynamicarray[k].amount);
         if (filter==dynamicarray[k].id||filter==dynamicarray[k].name||filter==dynamicarray[k].category||filter==dynamicarray[k].manufacturer||filter==dynamicarray[k].price||filter==dynamicarray[k].amount||filter==dynamicarray[k].status)
           cout<<dynamicarray[k].id<<" "<<dynamicarray[k].name<<" "<<dynamicarray[k].category<<" "<<dynamicarray[k].manufacturer<<" "<<dynamicarray[k].price<<" "<<dynamicarray[k].amount<<" "<<dynamicarray[k].status<<" "<<endl;
       }
