@@ -19,6 +19,6 @@ void alert(string id,int threshold);
 void pos(string shopid);
 void deleteitem(string shopid);
 void view_record(string shopid);
-void sorting(int command,int linenum,int order);
+void sorting(int command,int linenum,int order,itemstruct *array);
 void view_search();
 #endif
