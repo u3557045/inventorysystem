@@ -7,7 +7,7 @@ struct itemstruct{
   string name;
   string category;
   string manufacturer;
-  int price;
+  double price;
   int amount;
   string procurementdate;
   string status;
@@ -21,4 +21,8 @@ void deleteitem(string shopid);
 void view_record(string shopid);
 void sorting(int command,int linenum,int order,itemstruct *array);
 void view_search();
+void sorting(int command,int linenum,int order,itemstruct *array);
+string checkid(string line);
+string checkprice(string filename,string productid);
+string checkamount(string filename, string productid);
 #endif
