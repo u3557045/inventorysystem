@@ -1,3 +1,8 @@
+//Input: shop ID that the user would like to search, choose whether he/she would like to view through sorting or search
+//if user would like to view through sorting, Input: sort by which column
+//Output: Sorted list of items by certain columns
+//if user would like to search, Input: any keyword in (Product ID/Product Name/Category Name/Manufacturer/Status)
+//Output: All details of any items containing that keyword
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
@@ -41,9 +46,9 @@ void view_search(){
     exit(1);
   }
   string line;
-  //input information into the dynamic array of structs
+  
   int linenum=0,count=0,position=0,n=0,substrlength;
-  while (getline(fin,line))
+  while (getline(fin,line))   //count the number of different types of items exist in the inventory
     linenum+=1;
   itemstruct * dynamicarray=new itemstruct[linenum];
   fin.close();
@@ -53,6 +58,7 @@ void view_search(){
     cout<<"Unable to open commodity status file\n";
     exit(1);
   }
+  //input information into the dynamic array of structs
   while (getline(fin,line)){
     position=line.find("|",n);
     substrlength=position-n;
@@ -104,7 +110,7 @@ void view_search(){
   cin>>command;
   cout<<endl;
   while(command!=3){
-    if (command==1){
+    if (command==1){    //choose the columns that the user would like to sort
       cout<<"Sort by \n1.Product ID \n2.Product Name \n3.Category \n4.Manufacturer \n5.Selling Price \n6.Amount \n7.Status\n";
       cout<<"Please enter command(1-7): ";
       cin>>sortcommand;
@@ -114,13 +120,14 @@ void view_search(){
       cout<<endl;
       sorting(sortcommand,count,ascenddescend,dynamicarray);
       cout<<setw(10)<<"Product ID"<<setw(20)<<"Product Name"<<setw(15)<<"Category Name"<<setw(15)<<"Manufacturer"<<setw(15)<<"Selling Price"<<setw(8)<<"Amount"<<setw(10)<<"Status\n";
+      //output sorted result
       for (int k=0;k<linenum;++k)
         cout<<setw(10)<<dynamicarray[k].id<<setw(20)<<dynamicarray[k].name<<setw(15)<<dynamicarray[k].category<<setw(15)<<dynamicarray[k].manufacturer<<setw(15)<<dynamicarray[k].price<<setw(8)<<dynamicarray[k].amount<<setw(10)<<dynamicarray[k].status<<'\n'<<endl;
     }
-    else if (command==2){
+    else if (command==2){   //Search any items by inputting Product ID/Product Name/Category Name/Manufacturer/Status
       string filter;
       bool checkex=false;
-      cout<<"Search: ";
+      cout<<"Search(Product ID/Product Name/Category Name/Manufacturer/Status): ";
       cin>>filter;
       string price,amount;
       int countsearch=0;
@@ -129,11 +136,13 @@ void view_search(){
           if (filter==dynamicarray[k].id||filter==dynamicarray[k].name||filter==dynamicarray[k].category||filter==dynamicarray[k].manufacturer||filter==dynamicarray[k].status){
             checkex=true;
             countsearch++;
-            if (countsearch==1&&(checkex==true))
+            if (countsearch==1&&(checkex==true))   //outputting column heading for the first loop
               cout<<setw(10)<<"Product ID"<<setw(20)<<"Product Name"<<setw(15)<<"Category Name"<<setw(15)<<"Manufacturer"<<setw(15)<<"Selling Price"<<setw(8)<<"Amount"<<setw(10)<<"Status\n";
+            //output search result
             cout<<setw(10)<<dynamicarray[k].id<<setw(20)<<dynamicarray[k].name<<setw(15)<<dynamicarray[k].category<<setw(15)<<dynamicarray[k].manufacturer<<setw(15)<<dynamicarray[k].price<<setw(8)<<dynamicarray[k].amount<<setw(10)<<dynamicarray[k].status<<'\n'<<endl;
           }
         }
+        //Output invalid result when the search item does not exist
         if (checkex==false){
           cout<<"Such item does not exist, please search again: ";
           cin>>filter;
