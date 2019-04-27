@@ -1,3 +1,6 @@
+//This function allow user to delete certain item from the inventory
+//Input: Product ID
+//Delete from the status file
 #include "datastructure.h"
 #include <iostream>
 #include <fstream>
