@@ -75,9 +75,13 @@ The system will automatically store the detail into database and record the time
 #### Update Commoidity Info
 This module allows the user to update the item details which already exist in the database in case of details erorrs or modification of price tag.
 
+
 #### View and Search Item
 This module allows the user to choose which branch store inventory status he/she would like to view.
 It allows the user to search(Product ID/Product Name/Category Name/Manufacturer/Status) in the inventory status, and view the inventory status by sorting different columns.
+````
+Please use fullscreen to obtain the best result
+````
 
 #### Delete Obsolete Commodity
 This module allows the user to delete the commodity that is expired or not avavilble any more.
@@ -89,6 +93,8 @@ Once the staff confirms the transaction, it will be recorded.
 If the product that customer wants is out-of-stock, the system will show which branch stores in other locatons have the product.
 
 #### View Monthly Record
+This module allows user the get the summary of the transaction in a month, like inventory change or gross profit.
+Also it provides the staff of information which item is best selling or profit making.
 
 #### Alert system
 When a commodity stock amount in the user's branch store reaches the threshold amount(default 30) or becoming out-of-stock, an alert will appear once the user open the menu interface. The threshold amount could be modified in the setting.
