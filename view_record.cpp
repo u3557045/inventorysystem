@@ -9,7 +9,7 @@ using namespace std;
 void view_record(string shopid){
   //open transection file
   ifstream tranfin;
-  fstream temp,_temp;
+  fstream temp;
   string month[12];
   month[0]="Jan";
   month[1]="Feb";
@@ -25,24 +25,24 @@ void view_record(string shopid){
   month[11]="Dec";
 
 
-  tranfin.open((shopid+"_transaction.txt").c_str());
-  if (tranfin.fail()){
-    cout<<"Unable to open transaction file\n";
-    exit(1);
-  }
+
 
 
   int grosssales=0,grossprofit=0,count,linenum=0,i,j=0,index;
   string monthin,id,line,bye;
   bool firstline =true,exit=false;
   while(!exit){
+    j=0;
+    system("clear");
     //do{
       cout<<"Which monthly report would you like to view? (1-12)\n";
       cin >> monthin;
     //}while(!(monthin>="1"&&monthin<="12"));
-    cout<<"************************************************MONTHLY REPORT*************************************************\n";
+    cout<<"Report on " << month[stoi(monthin)-1]<< ":"<<endl;
+    cout<< "Product ID\tProduct Name\tInventory Change\tGross profit\n ";
     int pos,lastpos,amount,price,idpos,itemsales,largestsale=0;
     temp.open((month[stoi(monthin)-1]+"_temp.txt").c_str(),ios::out);
+    tranfin.open((shopid+"_transaction.txt").c_str());
     while (getline(tranfin,line)){
       if (line.find(month[stoi(monthin)-1])!=string::npos){
         temp << line <<endl;
@@ -50,6 +50,7 @@ void view_record(string shopid){
       }
     }
     temp.close();
+    tranfin.close();
     temp.open((month[stoi(monthin)-1]+"_temp.txt").c_str(),ios::in);
     itemstruct * products = new itemstruct[linenum];
     while(getline(temp,line)){
@@ -69,12 +70,19 @@ void view_record(string shopid){
       j++;
     }
     temp.close();
+    for(i=0;i<linenum;++i){
+      cout << products[i].id << "|" << products[i].name << "|" << products[i].amount << "|" << products[j].price << endl;
+    }
     sorting(1,linenum,1,products);
+    cout << "after: " << endl;
+    for(i=0;i<linenum;++i){
+      cout << products[i].id << "|" << products[i].name << "|" << products[i].amount << "|" << products[j].price << endl;
+    }
     int amountchange=0;
     double greatestgain=0,gain=0,totalgain=0;
     string bestsale_item;
     for(i=0;i<linenum;++i){
-      //cout << products[i].id << "|" << products[i].name << "|" << products[i].amount << "|" << products[j].price << endl;
+
       if(i==0){
         amountchange+=products[i].amount;
         gain+=products[i].amount*products[i].price;
@@ -84,19 +92,20 @@ void view_record(string shopid){
         gain+=products[i].amount*products[i].price;
       }
       else{
-        cout << products[i].id << "|" << products[i].name << "|" << amountchange << "|" << products[j].price << endl;
-        if(gain>greatestgain){
+        if(gain>=greatestgain){
           greatestgain=gain;
           bestsale_item=products[i-1].id;
-          gain=0;
         }
+
+        cout << products[i].id << "\t" << products[i].name << "\t\t" << amountchange << "\t\t\t" << products[i].price<< endl;
         amountchange=products[i].amount;
+        gain=0;
       }
       totalgain+=products[i].amount*products[i].price;
     }
     cout << "The best selling item is " << bestsale_item << endl;
     cout << "The gross profit is $" << totalgain << endl;
-
+    delete []products;
     cout << "Back to main screen? (Y/N)";
     cin >> bye;
     if(bye=="Y")

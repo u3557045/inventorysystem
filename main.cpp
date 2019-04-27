@@ -103,7 +103,8 @@ int main() {
         pos(shopid);
         break;
       case 6:          //view monthly record
-        //view_record(shopid);
+        system("clear");
+        view_record(shopid);
         break;
       case 7:          //setting
         case7exit=false;
