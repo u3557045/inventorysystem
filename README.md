@@ -28,6 +28,7 @@ procurement
 make build
 ./build
 ```
+You can use test as the shop ID for testing, where test_status.txt and test_transaction contain the sample database.
 
 ## Implementation
 
