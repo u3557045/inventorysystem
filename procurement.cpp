@@ -38,6 +38,7 @@ void procurement(string shopid){
   int amount,sellingprice;
   while(!bye){
     system("clear");
+    //allowing users to insert items information
     cout<<"Enter the number of items that you would like to insert: ";
     cin>>number_insert;
     cout << endl;
@@ -48,7 +49,7 @@ void procurement(string shopid){
       cout<<"Enter Product ID (begin with ID) : ";
       cin>>productid;
       cout << endl;
-      while(productid.find("ID")){
+      while(productid.find("ID")){            //ensure the input product ID is valid
         cout << "Please enter a vaild ID (e.g. ID00001): ";
         cin >> productid;
         cout << endl;
@@ -73,18 +74,21 @@ void procurement(string shopid){
       cin>>sellingprice;
       cout<<endl;
 
-      if (itemexist=="No"){
-        //append into files
+      if (itemexist=="No"){       //if the item has not been bought before
+        //append into status file
         sfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<sellingprice<<"|"<<amount<<"|IN-STOCK\n";
         time(&tt);
         ti=localtime(&tt);
+        //append the procurement record into transaction file
         tfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
       }
-      if (itemexist=="Yes"){
+      
+      if (itemexist=="Yes"){     //if the item has been bought before
         time(&tt);
         ti=localtime(&tt);
+        //append the procurement record into transaction file
         tfout<<productid<<"|"<<productname<<"|"<<categoryname<<"|"<<manufacturer<<"|"<<price<<"|"<<amount<<"|"<<asctime(ti)<<'\n';
-        //change item status in status.txt
+        //change item amount in status.txt
         updatestatus(statusfilename,6,to_string(amount),productid);
       }
       cout << "Product is added to the inventory.\n";
