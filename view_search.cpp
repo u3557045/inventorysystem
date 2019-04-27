@@ -130,7 +130,7 @@ void view_search(){
             checkex=true;
             countsearch++;
             if (countsearch==1&&(checkex==true))
-              cout<<"Product ID\t"<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\n";
+              cout<<setw(10)<<"Product ID"<<setw(30)<<"Product Name"<<setw(25)<<"Category Name"<<setw(25)<<"Manufacturer"<<setw(8)<<"Selling Price"<<setw(9)<<"Amount"<<setw(15)<<"Status\n";
             cout<<setw(10)<<dynamicarray[k].id<<setw(30)<<dynamicarray[k].name<<setw(25)<<dynamicarray[k].category<<setw(25)<<dynamicarray[k].manufacturer<<setw(8)<<dynamicarray[k].price<<setw(9)<<dynamicarray[k].amount<<setw(15)<<dynamicarray[k].status<<'\n'<<endl;
           }
         }
