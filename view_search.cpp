@@ -88,7 +88,7 @@ void view_search(){
     position=line.find("|",n);
 
     substrlength=position-n;
-    dynamicarray[count].status=line.substr(n,8);
+    dynamicarray[count].status=line.substr(n,substrlength);
 
     n=0;
     position=0;
@@ -113,7 +113,7 @@ void view_search(){
       cin>>ascenddescend;
       cout<<endl;
       sorting(sortcommand,count,ascenddescend,dynamicarray);
-      cout<<"Product ID\t"<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\n";
+      cout<<setw(10)<<"Product ID”<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\n";
       for (int k=0;k<linenum;++k)
         cout<<dynamicarray[k].id<<"\t\t"<<dynamicarray[k].name<<"\t\t"<<dynamicarray[k].category<<"\t\t"<<dynamicarray[k].manufacturer<<"\t\t"<<dynamicarray[k].price<<"\t\t"<<dynamicarray[k].amount<<'\t'<<dynamicarray[k].status<<'\n'<<endl;
     }
