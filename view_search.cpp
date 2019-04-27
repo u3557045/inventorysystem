@@ -113,9 +113,9 @@ void view_search(){
       cin>>ascenddescend;
       cout<<endl;
       sorting(sortcommand,count,ascenddescend,dynamicarray);
-      cout<<setw(10)<<"Product ID”<<"Product Name\t"<<"Category Name\t"<<"Manufacturer\t"<<"Selling Price\t"<<"Amount\t"<<"Status\n";
+      cout<<setw(10)<<"Product ID"<<setw(30)<<"Product Name"<<setw(25)<<"Category Name"<<set(25)<<"Manufacturer"<<setw(8)<<"Selling Price"<<setw(9)<<"Amount"<<setw(15)<<"Status\n";
       for (int k=0;k<linenum;++k)
-        cout<<dynamicarray[k].id<<"\t\t"<<dynamicarray[k].name<<"\t\t"<<dynamicarray[k].category<<"\t\t"<<dynamicarray[k].manufacturer<<"\t\t"<<dynamicarray[k].price<<"\t\t"<<dynamicarray[k].amount<<'\t'<<dynamicarray[k].status<<'\n'<<endl;
+        cout<<setw(10)<<dynamicarray[k].id<<setw(30)<<dynamicarray[k].name<<setw(25)<<dynamicarray[k].category<<setw(25)<<dynamicarray[k].manufacturer<<set(8)<<dynamicarray[k].price<<setw(9)<<dynamicarray[k].amount<<setw(15)<<dynamicarray[k].status<<'\n'<<endl;
     }
     else if (command==2){
       string filter;
