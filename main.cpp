@@ -70,7 +70,7 @@ int main() {
     if(shopid.empty()){
       do{
         cout<<"Enter your Shop ID: ";
-        cin>>shopid;
+        cin>>shopid; // the input is a string of shopid
         add=checkshop(shopid);
       }while(!add);
     }
@@ -85,7 +85,7 @@ int main() {
 
     do{
       cout << "Please enter command (1-8): ";
-      cin >> command;
+      cin >> command; // the input is an integer from 1 to 8
     }while(command<"1" || command>"8");
 
     switch (stoi(command)) {
@@ -122,7 +122,7 @@ int main() {
           cout <<"3.Exit\n";
           do{
             cout << "Please enter command (1-3): ";
-            cin >> cmd;
+            cin >> cmd; //the input is an integer from 1 to 3
           }while(cmd<"1"||cmd>"3");
 
           switch (stoi(cmd)) {
@@ -130,12 +130,12 @@ int main() {
             // set threshold of the alert system
             case 1:
               cout << "Please enter the threshold (default 30) volume that triger the alert: ";
-              cin >> threshold;
+              cin >> threshold; //the input is an integer
               break;
             // change the shop id that you want to perform operation
             case 2:
               cout << "Enter your shop ID: ";
-              cin >> temp;
+              cin >> temp; // input is a string of shopid
               if(checkshop(temp)){
                 shopid=temp;
                 cout << "Sucessfully changed shop ID!\n";

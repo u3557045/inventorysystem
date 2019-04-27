@@ -40,7 +40,7 @@ void view_record(string shopid){
     system("clear");
 
     cout<<"Which monthly report would you like to view? (1-12)\n";
-    cin >> monthin;
+    cin >> monthin; // the input is an integer from 1 to 12
 
 
     temp.open((month[stoi(monthin)-1]+"_temp.txt").c_str(),ios::out);
@@ -60,8 +60,8 @@ void view_record(string shopid){
     if(linenum==0)
       cout << "There is no transaction on " << month[stoi(monthin)-1] <<endl;
     else{
-      cout<<"Report on " << month[stoi(monthin)-1]<< ":"<<endl;
-      cout<<setw(10)<< "Product ID"<<setw(25)<<"Product Name"<<setw(20)<<"Inventory Change"<<setw(15)<<"Gross profit" <<endl;
+      cout<<"Report on " << month[stoi(monthin)-1]<< ":"<<endl; // output is the title of the report
+      cout<<setw(10)<< "Product ID"<<setw(25)<<"Product Name"<<setw(20)<<"Inventory Change"<<setw(15)<<"Gross profit" <<endl; //output is the field name
       temp.open((month[stoi(monthin)-1]+"_temp.txt").c_str(),ios::in);
       itemstruct * products = new itemstruct[linenum];
       while(getline(temp,line)){
@@ -108,7 +108,7 @@ void view_record(string shopid){
         if(i==0){
           amountchange+=products[i].amount;
           gain+=-1*products[i].amount*products[i].price;
-          if(products[i].amount<0){  //amount is negative representing the transaction is sold out 
+          if(products[i].amount<0){  //amount is negative representing the transaction is sold out
             sale+=products[i].amount;
           }
 
@@ -132,7 +132,7 @@ void view_record(string shopid){
           }
           if(products[i].amount<0)
             sale=products[i].amount;
-          cout <<setw(10)<<products[i-1].id  <<setw(25)<< products[i-1].name  <<setw(20)<< amountchange <<setw(15) << gain<< endl;
+          cout <<setw(10)<<products[i-1].id  <<setw(25)<< products[i-1].name  <<setw(20)<< amountchange <<setw(15) << gain<< endl;//output is the item summary
           amountchange=products[i].amount;
           gain=-1*products[i].amount*products[i].price;
         }
@@ -146,7 +146,7 @@ void view_record(string shopid){
         greatestsale=sale;
         bestsale_item=products[linenum-1].id;
       }
-      cout <<setw(10)<< products[linenum-1].id  <<setw(25)<< products[linenum-1].name  <<setw(20)<< amountchange <<setw(15) << gain<< endl;
+      cout <<setw(10)<< products[linenum-1].id  <<setw(25)<< products[linenum-1].name  <<setw(20)<< amountchange <<setw(15) << gain<< endl;//output is the item summary
       cout <<endl;
       if(totalgain>0)
         cout << "The item makes the greatest profit is " << greatestgain_item << endl;

@@ -25,14 +25,14 @@ void pos(string shopid){
     // simple input vaildation
     do{
       cout << "Please enter the command (1-3): ";
-      cin >> cmd;
+      cin >> cmd; //input is an integer from 1 to 3
     }while(cmd>"3"||cmd<"1");
 
     exist=false;
     switch (stoi(cmd)) {
       case 1:
         system("clear");
-        cout << "Please enter the product ID that you want to check: ";
+        cout << "Please enter the product ID that you want to check: "; //input is string of product ID
         cin >> productid;
         status.open(statusfilename.c_str(),ios::in);
         while(getline(status,line)&&!exist){
@@ -43,13 +43,13 @@ void pos(string shopid){
         status.close();
         if(exist){
           price=checkprice(statusfilename,productid);
-          cout << "The selling price of " << productid << " is $" << price << endl;
+          cout << "The selling price of " << productid << " is $" << price << endl; //output the selling of the product
           cout << "Press any key to continue\n";
           cin.get();
           cin.get();
         }
         else{
-          cout << "Product ID " << productid << " is not exist." <<endl;
+          cout << "Product ID " << productid << " is not exist." <<endl; //output if the product is not exist
           cout << "Press any key to continue.\n";
           cin.get();
           cin.get();
@@ -58,7 +58,7 @@ void pos(string shopid){
       case 2:
         system("clear");
         cout << "Please enter product ID that needs check-out: ";
-        cin >> productid;
+        cin >> productid; // input is string of product ID
 
         status.open(statusfilename.c_str(),ios::in);
         while(getline(status,line)&&!exist){
@@ -74,7 +74,7 @@ void pos(string shopid){
 
           //if not available at the current shop -> look for availablity at other shop
           if(amountstr=="0"){
-            cout << "Product ID " << productid << " is out of stock in your shop." << endl;
+            cout << "Product ID " << productid << " is out of stock in your shop." << endl;//output if the product is out of stock
             shoplist.open("shoplist.txt",ios::in);
             while(getline(shoplist,id)){
               cout << "Opening shop " << id << endl;
@@ -92,25 +92,25 @@ void pos(string shopid){
             }
             shoplist.close();
             if(!shopids.empty())
-              cout << "Available at shop " << shopids << endl;
+              cout << "Available at shop " << shopids << endl; //output the availablity of shop
           }
 
           //if the item is available perform normal checkout
           else{
             price = checkprice(statusfilename,productid);
-            cout << "The price is $" << price << " and have "<< amountstr<< " left."<< endl;
+            cout << "The price is $" << price << " and have "<< amountstr<< " left."<< endl;//output the info of the stock
             cout << "Please enter the amount: ";
-            cin >> amount;
+            cin >> amount; //input is an interger
 
           //check if the volume left is enough
             if(stoi(amountstr)<amount)
               cout << "Not enough stock!!" << endl;
             else{
-              cout << "The total is $" << stod(price)*(amount) <<endl;
+              cout << "The total is $" << stod(price)*(amount) <<endl;//output the total amount
 
           //to confirm the checkout
               cout << "Proceed? (Y/N) ";
-              cin >> checkout;
+              cin >> checkout; //input is a string
               if(checkout=='Y'){
                 transaction.open(transactionfilename.c_str(),ios::app);
                 status.open(statusfilename.c_str(),ios::in);

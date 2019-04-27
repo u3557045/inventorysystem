@@ -31,9 +31,9 @@ void alert(string id,int threshold){
 
       //check the volume of item left at the shop in order to give alert to the user/staff
       if(amount<=threshold && amount!=0)
-        cout<<"Product " <<productid <<'|'<<productname<<" is running out of stock with " << amount <<" left!" <<endl;
+        cout<<"Product " <<productid <<'|'<<productname<<" is running out of stock with " << amount <<" left!" <<endl;  // output is the volume left of item which is below the threshold
       else if (amount==0)
-        cout<<"Product " <<productid <<'|'<<productname<<" ran out of stock !!"  <<endl;
+        cout<<"Product " <<productid <<'|'<<productname<<" ran out of stock !!"  <<endl; //output is item which is out of stock
     }
     file.close();
   }

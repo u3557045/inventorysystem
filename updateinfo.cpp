@@ -8,7 +8,7 @@ void update(string shopid){
   bool exit=false;
   status=shopid+"_status.txt";
   transaction=shopid+"_transaction.txt";
-  cout << "Please enter the ID of the product that you want to modify:";
+  cout << "Please enter the ID of the product that you want to modify:"; //input is string of product ID
   itemstruct item;
   cin >> item.id;
   while(true && !exit){
@@ -22,7 +22,7 @@ void update(string shopid){
     //simple input vaildation
     do{
       cout << "Please enter command (1-5): ";
-      cin >> choice;
+      cin >> choice; //input is an integer from 1 to 5
     }while(choice<"1" || choice>"5");
 
     //use a numerical variable choice to limit the field that subject to change
