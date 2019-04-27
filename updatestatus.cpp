@@ -36,8 +36,8 @@ void updatestatus(string filename,int field,string content,string id){
           }
           else if(count==6 && line[i]!='|')
             amountstr+=line[i];
+        //chaneg the status of the item according to volume left
           if(count==7){
-            //cout << "updatestatus : amountstr" << amountstr << endl;
             if(amountstr=="0")
               temp << "OUT-OF_STOCK";
             else
@@ -104,4 +104,5 @@ void updatestatus(string filename,int field,string content,string id){
   }
   file.close();
   temp.close();
+  remove("temp_update.txt");
 }

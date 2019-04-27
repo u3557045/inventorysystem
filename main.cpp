@@ -2,8 +2,10 @@
 #include <fstream>
 #include "datastructure.h"
 using namespace std;
+// display the menu
 void printmenu(){
   cout << "----------------------------------------\n";
+  cout << "----------Smart Inventory System--------\n";
   cout << "----------------------------------------\n";
   cout << " 1.Procurement\n";
   cout << " 2.Update Commodity Info\n";
@@ -15,6 +17,8 @@ void printmenu(){
   cout << " 8.Exit\n";
   cout << "---------------------------------------\n";
 }
+
+//put the shop id to the shoplist.txt to represent the existance of the shop
 void creatnewshop(string shopid){
   ofstream snew,tnew;
   string statusfilename,transactionfilename;
@@ -26,6 +30,8 @@ void creatnewshop(string shopid){
   tnew.close();
 
 }
+
+//check the existance of the shop by reading through the shoplist.txt
 bool checkshop(string shopid){
   fstream shoplist;
   string line;
@@ -68,13 +74,14 @@ int main() {
         add=checkshop(shopid);
       }while(!add);
     }
-    //system("clear");
     printmenu();
+
+    //alert function which pop notification on the mai screeen which the volume is below the threshold
     alert(shopid,threshold);
     cout << "----------------------------------------\n";
 
 
-    // place alert system here which pop notification when the volume reaches the threshol
+
 
     do{
       cout << "Please enter command (1-8): ";
@@ -119,10 +126,13 @@ int main() {
           }while(cmd<"1"||cmd>"3");
 
           switch (stoi(cmd)) {
+
+            // set threshold of the alert system
             case 1:
               cout << "Please enter the threshold (default 30) volume that triger the alert: ";
               cin >> threshold;
               break;
+            // change the shop id that you want to perform operation
             case 2:
               cout << "Enter your shop ID: ";
               cin >> temp;

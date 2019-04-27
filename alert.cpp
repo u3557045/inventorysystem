@@ -4,15 +4,13 @@
 #include <string>
 void alert(string id,int threshold){
   if(id!="0"){
-    //cout << "alert is working\n";
     string filename,line,amountstr,productid,productname;
     int count=1,amount;
     filename=id+"_status.txt";
-    //cout << filename <<endl;
     ifstream file;
     file.open(filename.c_str());
     while(getline(file,line)){
-      //cout << line <<endl;
+
       count=1;
       amount=0;
       amountstr.clear();
@@ -29,8 +27,9 @@ void alert(string id,int threshold){
           amountstr+=line[i];
 
       }
-      //cout <<amountstr;
       amount=stoi(amountstr);
+
+      //check the volume of item left at the shop in order to give alert to the user/staff
       if(amount<=threshold && amount!=0)
         cout<<"Product " <<productid <<'|'<<productname<<" is running out of stock with " << amount <<" left!" <<endl;
       else if (amount==0)

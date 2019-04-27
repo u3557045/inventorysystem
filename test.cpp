@@ -11,9 +11,7 @@ const int MAX_SIZE = 1000;
 
 int main()
 {
-    char i;
-    cin >> i ;
-    cout << i << endl;
-    
+
+    cout << "\e[8;50;100t";
     return 0;
 }

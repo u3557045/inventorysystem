@@ -52,6 +52,6 @@ void deleteitem(string shopid) {
         break;
     }
   }
-
+  remove("temp_update.txt");
 
 }

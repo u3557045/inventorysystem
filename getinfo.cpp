@@ -10,6 +10,7 @@ string checkprice(string filename,string productid){
   ifstream file;
   file.open(filename.c_str());
   while(getline(file,line)){
+  //use count to represent the field to read the correct info from different field
     count=1;
     if(line.find(productid)!=string::npos){
       for(int i=0;i<line.length();++i){

@@ -113,9 +113,9 @@ void view_search(){
       cin>>ascenddescend;
       cout<<endl;
       sorting(sortcommand,count,ascenddescend,dynamicarray);
-      cout<<setw(10)<<"Product ID"<<setw(30)<<"Product Name"<<setw(25)<<"Category Name"<<setw(25)<<"Manufacturer"<<setw(8)<<"Selling Price"<<setw(9)<<"Amount"<<setw(15)<<"Status\n";
+      cout<<setw(10)<<"Product ID"<<setw(20)<<"Product Name"<<setw(15)<<"Category Name"<<setw(15)<<"Manufacturer"<<setw(15)<<"Selling Price"<<setw(8)<<"Amount"<<setw(10)<<"Status\n";
       for (int k=0;k<linenum;++k)
-        cout<<setw(10)<<dynamicarray[k].id<<setw(30)<<dynamicarray[k].name<<setw(25)<<dynamicarray[k].category<<setw(25)<<dynamicarray[k].manufacturer<<setw(8)<<dynamicarray[k].price<<setw(9)<<dynamicarray[k].amount<<setw(15)<<dynamicarray[k].status<<'\n'<<endl;
+        cout<<setw(10)<<dynamicarray[k].id<<setw(20)<<dynamicarray[k].name<<setw(15)<<dynamicarray[k].category<<setw(15)<<dynamicarray[k].manufacturer<<setw(15)<<dynamicarray[k].price<<setw(8)<<dynamicarray[k].amount<<setw(10)<<dynamicarray[k].status<<'\n'<<endl;
     }
     else if (command==2){
       string filter;
@@ -130,8 +130,8 @@ void view_search(){
             checkex=true;
             countsearch++;
             if (countsearch==1&&(checkex==true))
-              cout<<setw(10)<<"Product ID"<<setw(30)<<"Product Name"<<setw(25)<<"Category Name"<<setw(25)<<"Manufacturer"<<setw(8)<<"Selling Price"<<setw(9)<<"Amount"<<setw(15)<<"Status\n";
-            cout<<setw(10)<<dynamicarray[k].id<<setw(30)<<dynamicarray[k].name<<setw(25)<<dynamicarray[k].category<<setw(25)<<dynamicarray[k].manufacturer<<setw(8)<<dynamicarray[k].price<<setw(9)<<dynamicarray[k].amount<<setw(15)<<dynamicarray[k].status<<'\n'<<endl;
+              cout<<setw(10)<<"Product ID"<<setw(20)<<"Product Name"<<setw(15)<<"Category Name"<<setw(15)<<"Manufacturer"<<setw(15)<<"Selling Price"<<setw(8)<<"Amount"<<setw(10)<<"Status\n";
+            cout<<setw(10)<<dynamicarray[k].id<<setw(20)<<dynamicarray[k].name<<setw(15)<<dynamicarray[k].category<<setw(15)<<dynamicarray[k].manufacturer<<setw(15)<<dynamicarray[k].price<<setw(8)<<dynamicarray[k].amount<<setw(10)<<dynamicarray[k].status<<'\n'<<endl;
           }
         }
         if (checkex==false){

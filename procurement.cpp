@@ -88,11 +88,12 @@ void procurement(string shopid){
         updatestatus(statusfilename,6,to_string(amount),productid);
       }
       cout << "Product is added to the inventory.\n";
-      cout << "Go back to main screen? (Y/N) :";
-      cin >> back;
-      if(back=="Y")
-        bye =true;
+
     }
+    cout << "Go back to main screen? (Y/N) :";
+    cin >> back;
+    if(back=="Y")
+      bye =true;
   }
 
   delete ti;
