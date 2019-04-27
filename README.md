@@ -3,7 +3,7 @@
 ## Problem Setting
 
 ### What is the problem?
-When the commodity stack up, the inventory may become messy and difficult to monitor the inventory status. It is difficult determine when stock replenishment is needed.
+When the commodity stack up, the inventory may become messy and difficult to monitor the inventory status. It is difficult determine when stock replenishment is needed. Also, when customers need certain products which are out-of-stock, it is hard to know which other branch stores have those items.
 
 ### How does the system help managing the inventory?
 With the aid of our system, staff would be able to examine the current status of the commodity in different shops and do some follow up actions.the smart inventory system provides an systematic approach to help increase the efficiency.
