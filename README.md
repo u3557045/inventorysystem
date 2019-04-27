@@ -95,7 +95,7 @@ If the product that customer wants is out-of-stock, the system will show which b
 
 #### View Monthly Record
 This module allows user the get the summary of the transaction in a month, like inventory change or gross profit.
-Also it provides the staff of information which item is best selling or profit making.
+Also it provides staff with information of which item is the best selling or the most profit making.
 
 #### Alert system
 When a commodity stock amount in the user's branch store reaches the threshold amount(default 30) or becoming out-of-stock, an alert will appear once the user open the menu interface. The threshold amount could be modified in the setting.
